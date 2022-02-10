@@ -1,9 +1,14 @@
-import './App.css';
+import './App.scss';
+import FormPersonalDates from './pages/FormPersonalDates';
 
 function App() {
   return (
     <body className="App">
-      Bienvenido a mi página
+      <main>
+        <FormPersonalDates>
+
+        </FormPersonalDates>
+      </main>
     </body>
   );
 }
