@@ -1,15 +1,13 @@
 import './App.scss';
-import FormPersonalDates from './pages/FormPersonalDates';
+import Profile from './pages/Profile';
 
 function App() {
   return (
-    <body className="App">
+    <div className="App">
       <main>
-        <FormPersonalDates>
-
-        </FormPersonalDates>
+        <Profile/>
       </main>
-    </body>
+    </div>
   );
 }
 
