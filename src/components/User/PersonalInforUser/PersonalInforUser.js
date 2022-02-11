@@ -1,8 +1,8 @@
-import './personalInformation.scss';
+import './personalInforUser.scss';
 
-
-function PersonalInformation({ name, email, city, country, description}) {
+function PersonalInforUser({ name, email, city, country, description}) {
     const avatarPerfil = "https://avatars.dicebear.com/api/micah/" + name + ".svg";
+    localStorage.setItem("avatar", avatarPerfil);
 
     return (
         <section className='personalInfo'>
@@ -19,4 +19,4 @@ function PersonalInformation({ name, email, city, country, description}) {
     );
 }
 
-export default PersonalInformation;
+export default PersonalInforUser;

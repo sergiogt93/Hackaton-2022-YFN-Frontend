@@ -1,24 +1,24 @@
 import './profile.scss';
-import PersonalInformation from '../../components/PersonalInformation';
+import PersonalInforUser from '../../components/User/PersonalInforUser';
+import WorkInforUser from '../../components/User/WorkInforUser';
 
 function Profile() {
 
-    const userData = {
-        name: localStorage.getItem("name"),
-        email: localStorage.getItem("email"),
-        city: localStorage.getItem("city"),
-        country: localStorage.getItem("country"),
-        description: localStorage.getItem("description")
-    };
+    const userData = JSON.parse(localStorage.getItem("user"));
+    const workUserData = JSON.parse(localStorage.getItem("workUserData"));
 
     return (
         <main>
-            <PersonalInformation
+            <PersonalInforUser
                 name={userData.name}
                 email={userData.email}
                 city={userData.city}
                 country={userData.country}
                 description={userData.description}
+            />
+            <WorkInforUser
+                experienceYears={workUserData.experienceYears}
+                sector={workUserData.sector}
             />
         </main>
     );
