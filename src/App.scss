@@ -1,3 +1,37 @@
+@use "./styles/base.scss";
+
 .App {
   text-align: center;
+}
+
+body, button, input, textarea {
+  font-family: base.$body-font;
+  font-size: base.$normal-font-size;
+}
+
+body {
+  transition: 0.4s;
+}
+
+h1, h2, h3 {
+  font-weight: base.$font-semibold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
