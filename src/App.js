@@ -1,11 +1,11 @@
 import './App.scss';
-import Profile from './pages/Profile';
+import FormPersonalUser from './pages/FormPersonalUser';
 
 function App() {
   return (
     <div className="App">
       <main>
-        <Profile/>
+        <FormPersonalUser/>
       </main>
     </div>
   );
