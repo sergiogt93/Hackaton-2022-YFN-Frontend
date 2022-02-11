@@ -4,8 +4,16 @@ import WorkInforUser from '../../components/User/WorkInforUser';
 
 function Profile() {
 
-    const userData = JSON.parse(localStorage.getItem("user"));
-    const workUserData = JSON.parse(localStorage.getItem("workUserData"));
+    const userData = {
+        "name": "sergio",
+        "email": "sergio.ber0556@gmail.com",
+        "city": "Rubi",
+        "country": "España",
+        "description": "DGNBA",
+        "experienceYears": "2 años",
+        "sector": "Backend",
+        "skills": ["HTML5", "CSS3", "JS"]
+    };
 
     return (
         <main>
@@ -17,8 +25,8 @@ function Profile() {
                 description={userData.description}
             />
             <WorkInforUser
-                experienceYears={workUserData.experienceYears}
-                sector={workUserData.sector}
+                experienceYears={userData.experienceYears}
+                sector={userData.sector}
             />
         </main>
     );
