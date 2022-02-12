@@ -1,11 +1,14 @@
+import FormPersonalUser from './views/FormPersonalUser';
+import Profile from './views/Profile';
 import './App.scss';
-import FormPersonalUser from './pages/FormPersonalUser';
 
 function App() {
+  const session = localStorage.getItem('userData');
+
   return (
     <div className="App">
       <main>
-        <FormPersonalUser/>
+        { session ? <Profile/> : <FormPersonalUser/>}
       </main>
     </div>
   );

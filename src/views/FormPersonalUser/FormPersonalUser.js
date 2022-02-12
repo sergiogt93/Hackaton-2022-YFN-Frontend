@@ -1,4 +1,7 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
+import { PROFILE } from "../../routes";
 import PersonalUserSchema from "./personalUserSchema";
 import './formPersonalUser.scss';
 
@@ -9,6 +12,9 @@ function FormPersonalUser({
     _city = '',
     _country = ''
 }) {
+
+    let navigate = useNavigate();
+
     return (
         <Formik
             initialValues = {{
@@ -22,6 +28,7 @@ function FormPersonalUser({
             onSubmit={(values, {resetForm}) => {
                 localStorage.setItem("userData", JSON.stringify(values));
                 resetForm();
+                navigate(PROFILE, {replace:true});
             }}
         >
             {({

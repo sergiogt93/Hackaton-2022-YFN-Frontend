@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FORM_PERSONAL_USER, PROFILE} from './routes';
+import FormPersonalUser from './views/FormPersonalUser';
+import Profile from './views/Profile';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App/>} exact/>
+        <Route path={PROFILE} element={<Profile/>}/>
+        <Route path={FORM_PERSONAL_USER} element={<FormPersonalUser/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
