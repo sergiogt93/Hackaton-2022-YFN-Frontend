@@ -5,9 +5,10 @@ import './scss/app.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FORM_PERSONAL_USER, PROFILE} from './routes/routes';
+import { FORM_PERSONAL_USER, FORM_SKILLS_USER, PROFILE} from './routes/routes';
 import FormPersonalUser from './pages/FormPersonalUser';
 import Profile from './pages/Profile';
+import FormSkillUser from './pages/FormSkillUser';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path="/" element={<App/>}/>
         <Route path={PROFILE} element={<Profile/>}/>
         <Route path={FORM_PERSONAL_USER} element={<FormPersonalUser/>}/>
+        <Route path={FORM_SKILLS_USER} element={<FormSkillUser/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

@@ -1,0 +1,23 @@
+@use "../../scss/base" as base;
+
+.box-skills {
+    @include base.flex(row wrap, flex-start);
+    gap: 20px;
+    padding: 20px;
+    padding-top: 60px;
+    position: relative;
+
+    figure{
+        width: 20%;
+    }
+
+    figure img {
+        width: 80%;
+    }
+}
+
+.edit-skill {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

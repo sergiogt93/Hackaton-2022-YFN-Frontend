@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
 import { PROFILE } from "../../routes/routes";
@@ -15,15 +14,24 @@ function FormPersonalUser({
 
     let navigate = useNavigate();
 
+    const initialValues = {
+        name: _name,
+        email: _email,
+        description: _description,
+        city: _city,
+        country: _country
+    }
+
+    const sectorValues = [
+        { value: "Front", label: "Front" },
+        { value: "Back", label: "Back" },
+        { value: "Mobile", label: "Mobile" },
+        { value: "Data", label: "Data" },
+    ];
+
     return (
         <Formik
-            initialValues = {{
-                name: _name,
-                email: _email,
-                description: _description,
-                city: _city,
-                country: _country
-            }}
+            initialValues = {initialValues}
             validationSchema = {PersonalUserSchema}
             onSubmit={(values, {resetForm}) => {
                 localStorage.setItem("userData", JSON.stringify(values));
@@ -45,21 +53,6 @@ function FormPersonalUser({
                     <label htmlFor="email">Email</label>
                     <Field type="email" id="email" name="email" placeholder="write your email"/>
                     {touched.email &&  errors.email && <p className=" error" role="alert">{errors.name}</p>}
-                </section>
-                <section className='sectionForm'>
-                    <label htmlFor="description">Description</label>
-                    <Field as="textarea" id="description" name="description" placeholder="write your description"/>
-                    {touched.description &&  errors.description && <p>{errors.description}</p>}
-                </section>
-                <section className='sectionForm'>
-                    <label htmlFor="city">City</label>
-                    <Field id="city" name="city" placeholder="write your city"/>
-                    {touched.city &&  errors.city && <p>{errors.city}</p>}
-                </section>
-                <section className='sectionForm'>
-                    <label htmlFor="country">Country</label>
-                    <Field id="country" name="country" placeholder="write your country"/>
-                    {touched.country &&  errors.country && <p>{errors.country}</p>}
                 </section>
                 <section className='sectionForm'>
                     <button type="submit">

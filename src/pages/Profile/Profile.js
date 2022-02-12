@@ -1,5 +1,6 @@
 import PersonalInforUser from '../../components/User/PersonalInforUser';
 import WorkInforUser from '../../components/User/WorkInforUser';
+import Skills from '../../components/Skills/Skills';
 import './profile.scss';
 
 function Profile() {
@@ -28,6 +29,7 @@ function Profile() {
                 experienceYears={userData.experienceYears}
                 sector={userData.sector}
             />
+            <Skills isForm={true}/>
         </main>
     );
 }
