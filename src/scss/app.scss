@@ -1,16 +1,17 @@
-@use "./styles/base.scss";
+@use "./base" as base;
 
 .App {
   text-align: center;
 }
 
+body {
+  transition: 0.4s;
+  background-color: base.$body-color;
+}
+
 body, button, input, textarea {
   font-family: base.$body-font;
   font-size: base.$normal-font-size;
-}
-
-body {
-  transition: 0.4s;
 }
 
 h1, h2, h3 {

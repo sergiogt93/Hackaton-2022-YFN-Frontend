@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './scss/index.scss';
+import './scss/app.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FORM_PERSONAL_USER, PROFILE} from './routes';
-import FormPersonalUser from './views/FormPersonalUser';
-import Profile from './views/Profile';
+import { FORM_PERSONAL_USER, PROFILE} from './routes/routes';
+import FormPersonalUser from './pages/FormPersonalUser';
+import Profile from './pages/Profile';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App/>} exact/>
+        <Route path="/" element={<App/>}/>
         <Route path={PROFILE} element={<Profile/>}/>
         <Route path={FORM_PERSONAL_USER} element={<FormPersonalUser/>}/>
       </Routes>

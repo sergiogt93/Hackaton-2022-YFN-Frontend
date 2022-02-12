@@ -1,0 +1,51 @@
+@use "../../scss/base" as base;
+
+.formPersonal {
+    background-color: base.$container-color;
+    width: 90%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+    border: 1px solid transparent;
+    border-radius: 2%;
+}
+
+.sectionForm {
+    display: grid;
+    place-items: center;
+    padding-top: 2rem;
+
+    label {
+        font-weight: bold;
+        padding-bottom: 0.5rem;
+    }
+
+    input {
+        height: 2rem;
+    }
+
+    input, textarea {
+        border: none;
+    }
+
+    button {
+        width: 60%;
+        margin: auto;
+        margin-top: 2rem;
+        background-color: #2471a3;
+        color: white;
+        height: 3rem;
+    }
+
+    button:hover {
+        background-color: hsl(222, 55%, 16%);
+    }
+}
+
+.error {
+    background-color: #fce4e4;
+    border: 1px solid #cc0033;
+    outline: none;
+    color: #842029;
+    padding: 2%;
+}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { FORM_PERSONAL_USER } from '../../../routes/routes';
 import './personalInforUser.scss';
 
 function PersonalInforUser({ name, email, city, country, description}) {
@@ -5,7 +7,8 @@ function PersonalInforUser({ name, email, city, country, description}) {
     localStorage.setItem("avatar", avatarPerfil);
 
     return (
-        <section className='personalInfo'>
+        <section className='personalInfo container'>
+            <Link to={FORM_PERSONAL_USER} className='edit-personal'><i class='bx bxs-edit'></i></Link>
             <article>
                 <img src={avatarPerfil} alt='avatarPerfil' className='profileAvatar'/>
             </article>
@@ -14,7 +17,10 @@ function PersonalInforUser({ name, email, city, country, description}) {
                 <p>{email !== null && email}</p>
                 <p>{city !== null && city + ","} {country !== null && country}</p>
             </article>
-            <p>{description !== null && description}</p>
+            <article>
+                <h2>Description</h2>
+                <p>{description !== null && description}</p>
+            </article>
         </section>
     );
 }

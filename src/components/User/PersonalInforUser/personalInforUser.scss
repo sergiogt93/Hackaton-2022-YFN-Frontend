@@ -1,8 +1,25 @@
 .personalInfo {
     display: grid;
+    position: relative;
     grid-gap: 2rem;
+    justify-items: center;
+    border: 1px solid transparent;
+    border-radius: 2%;
 }
 
 .profileAvatar {
     height: 100px;
+}
+
+
+.edit-personal {
+    position: absolute;
+    top: 2rem;
+    right: 10px;
+    font-size: 2.5rem;
+
+    .box-edit {
+        position: absolute;
+        right: 10px;
+    }
 }

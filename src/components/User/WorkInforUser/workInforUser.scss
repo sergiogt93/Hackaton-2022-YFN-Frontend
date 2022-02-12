@@ -1,0 +1,22 @@
+.workInfo {
+    display: flex;
+    gap: 20px;
+
+    .container {
+        position: relative;
+        margin: 0;
+        border: 1px solid transparent;
+        border-radius: 4%;
+        padding: 1rem;
+    }
+
+    .article_subtitle {
+        margin-top: 1rem;
+    }
+}
+
+.bxs-edit {
+    position: absolute;
+    right: 10px;
+    font-size: 1.5rem;
+}

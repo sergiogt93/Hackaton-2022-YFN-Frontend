@@ -1,6 +1,6 @@
-import './profile.scss';
 import PersonalInforUser from '../../components/User/PersonalInforUser';
 import WorkInforUser from '../../components/User/WorkInforUser';
+import './profile.scss';
 
 function Profile() {
 
@@ -16,7 +16,7 @@ function Profile() {
     };
 
     return (
-        <main>
+        <main className="profile">
             <PersonalInforUser
                 name={userData.name}
                 email={userData.email}

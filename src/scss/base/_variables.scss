@@ -1,16 +1,16 @@
 /*================= Colors ================*/
-// $first-hue: 14;
-// $sat: 100%;
-// $lig: 64%;
-// $second-hue: 219;
+$first-hue: 214;
+$sat: 100%;
+$lig: 64%;
+$second-hue: 214;
 
-// $first-color: hsl($first-hue, $sat, $lig);
-// $first-color-alt: hsl($first-hue, $sat, 60%);
-// $title-color: hsl($second-hue, 15%, 15%);
-// $text-color: hsl($second-hue, 8%, 35%);
-// $text-color-light: hsl($second-hue, 4%, 55%);
-// $body-color: hsl($second-hue, 100%, 99%);
-// $container-color: #fff;
+$first-color: hsl($first-hue, $sat, $lig);
+$first-color-alt: hsl($first-hue, $sat, 60%);
+$title-color: hsl($second-hue, 15%, 15%);
+$text-color: hsl($second-hue, 8%, 35%);
+$text-color-light: hsl($second-hue, 4%, 55%);
+$body-color: hsl($second-hue, 64%, 34%);
+$container-color: hsl($second-hue, 70, 81);
 
 /*================ TYPOGRAPHY =============*/
 /*================= Font and typography ================*/

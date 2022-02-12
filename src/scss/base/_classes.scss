@@ -1,7 +1,10 @@
+@use "variables";
+
 .container {
     max-width: 968px;
     margin-left: 1rem;
     margin-right: 1rem;
+    background-color: variables.$container-color;
 }
 
 .grid {
