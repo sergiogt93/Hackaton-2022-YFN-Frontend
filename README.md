@@ -14,11 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -45,26 +40,27 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Completed requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The mandatory requirements were:
 
-### Analyzing the Bundle Size
+✅ Task 1 → Form allowing to enter the following data: email, full name, short description, country and city of residence.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ Task 2 → Generate a random avatar of the person (can be using an API, colors, etc).
 
-### Making a Progressive Web App
+✅ Task 3 → Form allowing to enter professional data: years of experience, sector (Front, Back, Mobile or Data), skills: (can be added freely).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✅ Task 4 → Skills are tagged somewhere in the profile.
 
-### Advanced Configuration
+✅ Task 5 → A view that allows to see the whole user profile with the above data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Completed other function extras
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The other implements is:
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✅ Validation if user empty input
+https://github.com/sergiogt93/Hackaton-2022-YFN-Frontend/blob/dev/raw/validation.png
+
+✅ once you create a profile, you will be directly redirected to your profile, even if you open the browser later.
