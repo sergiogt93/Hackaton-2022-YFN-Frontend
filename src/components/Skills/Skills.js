@@ -7,7 +7,7 @@ function Skill({isForm = false}) {
 
     return (
         <section className='container box-skills'>
-            {isForm && <Link to={FORM_SKILLS_USER} className='edit-skill'><i class='bx bxs-edit'></i></Link>}
+            {isForm && <Link to={FORM_SKILLS_USER} className='edit-skill'><i className='bx bxs-edit'></i></Link>}
             {skillsUser.map((skill) => (
             <figure>
                 <img src={"https://cdn.svgporn.com/logos/"+skill.files[0]} alt="skill"/>

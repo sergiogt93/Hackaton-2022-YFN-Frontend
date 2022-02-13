@@ -8,7 +8,7 @@ function PersonalInforUser({ name, email, city, country, description}) {
 
     return (
         <section className='personalInfo container'>
-            <Link to={FORM_PERSONAL_USER} className='edit-personal'><i class='bx bxs-edit'></i></Link>
+            <Link to={FORM_PERSONAL_USER} className='edit-personal'><i className='bx bxs-edit'></i></Link>
             <article>
                 <img src={avatarPerfil} alt='avatarPerfil' className='profileAvatar'/>
             </article>

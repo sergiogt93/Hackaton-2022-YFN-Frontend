@@ -4,30 +4,21 @@ import { PROFILE } from "../../routes/routes";
 import PersonalUserSchema from "./personalUserSchema";
 import './formPersonalUser.scss';
 
-function FormPersonalUser({
-    _name = '',
-    _email = '',
-    _description = '',
-    _city = '',
-    _country = ''
-}) {
+function FormPersonalUser() {
 
     let navigate = useNavigate();
 
-    const initialValues = {
-        name: _name,
-        email: _email,
-        description: _description,
-        city: _city,
-        country: _country
-    }
+    const userData = JSON.parse(localStorage.getItem("userData"));
 
-    const sectorValues = [
-        { value: "Front", label: "Front" },
-        { value: "Back", label: "Back" },
-        { value: "Mobile", label: "Mobile" },
-        { value: "Data", label: "Data" },
-    ];
+    const {name, email, description, city, country} = userData;
+
+    const initialValues = {
+        name: name,
+        email: email,
+        description: description,
+        city: city,
+        country: country
+    }
 
     return (
         <Formik
