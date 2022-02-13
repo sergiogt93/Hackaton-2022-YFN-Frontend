@@ -1,18 +1,22 @@
-import { useParams } from "react-router";
-import { Formik, Form } from "formik";
+import { useNavigate } from 'react-router-dom';
+import { Formik, Form, Field } from "formik";
+import { PROFILE } from "../../routes/routes";
 import CustomSelect from '../../components/CustomSelect';
 import './formWorkUser.scss';
 
 export default function FormWork() {
-    const { experienceYear , sector } = useParams();
-    console.log(experienceYear, sector);
+    let navigate = useNavigate();
 
     const sectors = ["Front", "Backend", "Mobile", "Data"];
 
+    const workData = JSON.parse(localStorage.getItem("workUser"));
+
+    const {experienceYear, sector} = workData;
+
     const initialValues = {
         experienceYear: experienceYear,
-        sector: sector || sectors,
-        selectedValue: sectors.findIndex(item => item === sector) || 0
+        sectors: sectors,
+        selectedSector: sectors.findIndex(item => item === sector) + 1 || 0
     };
 
     return (
@@ -20,22 +24,26 @@ export default function FormWork() {
             <Formik
                 initialValues = {initialValues}
                 onSubmit={(values) => {
-                    // const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser"));
-                    // const newSkill = allSkills.find(skill => skill.name === values.skill);
-                    // oldSkillsUser.push(newSkill);
-                    // localStorage.setItem("skillsUser", JSON.stringify(oldSkillsUser));
-                    // navigate(PROFILE, {replace:true});
-                    console.log(values);
+                    const workUser = {experienceYear: values.experienceYear, sector: values.sector};
+                    localStorage.setItem("workUser", JSON.stringify(workUser));
+                    navigate(PROFILE, {replace:true});
                 }}
             >
                 {({
                     values,
+                    touched,
+                    errors,
                 }) => (
                     <Form className='formSkill container'>
+                        <section className='sectionForm'>
+                            <label htmlFor="experienceYear">Experencie years: (only numbers)</label>
+                            <Field type="number" id="experienceYear" name="experienceYear" placeholder="write your name"/>
+                            {touched.name && errors.name && <p className="error" role="alert">{errors.name}</p>}
+                        </section>
                         <CustomSelect
                             name = "sector"
-                            options = {values.sector}
-                            selectedValue = {values.selectedValue}
+                            options = {values.sectors}
+                            selectedIndex = {values.selectedSector}
                         ></CustomSelect>
                         <section className='sectionForm'>
                             <button type="submit">

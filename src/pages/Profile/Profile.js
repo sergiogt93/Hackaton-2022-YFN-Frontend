@@ -4,17 +4,9 @@ import Skills from '../../components/Skills/Skills';
 import './profile.scss';
 
 function Profile() {
-
-    const userData = {
-        "name": "sergio",
-        "email": "sergio.ber0556@gmail.com",
-        "city": "Rubi",
-        "country": "España",
-        "description": "DGNBA",
-        "experienceYears": "2 años",
-        "sector": "Backend",
-        "skills": ["HTML5", "CSS3", "JS"]
-    };
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const workUser = JSON.parse(localStorage.getItem("workUser"));
+    console.log('workUser',workUser);
 
     return (
         <main className="profile">
@@ -26,8 +18,8 @@ function Profile() {
                 description={userData.description}
             />
             <WorkInforUser
-                experienceYears={userData.experienceYears}
-                sector={userData.sector}
+                experienceYears={workUser.experienceYear}
+                sector={workUser.sector}
             />
             <Skills isForm={true}/>
         </main>

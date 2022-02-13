@@ -10,11 +10,12 @@ import unassignedSkills from '../../utils/useUnassignedSkills';
 
 export default function FormSkill() {
     const navigate = useNavigate();
+    const nameSkills = unassignedSkills(userSkills()).map(element => element.name);
 
     return (
         <main>
             <Formik
-                initialValues = {unassignedSkills(userSkills())}
+                initialValues = {nameSkills}
                 onSubmit={(values) => {
                     const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser"));
                     const newSkill = allSkills.find(skill => skill.name === values.skill);
