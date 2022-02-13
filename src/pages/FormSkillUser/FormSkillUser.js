@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Formik, Form } from "formik";
 import { PROFILE } from "../../routes/routes";
 import CustomSelect from '../../components/CustomSelect';
@@ -33,9 +34,10 @@ export default function FormSkill() {
                             options = {values}
                         ></CustomSelect>
                         <section className='sectionForm'>
-                            <button type="submit">
-                                Añadir
-                            </button>
+                            <button type="submit">AÑADIR</button>
+                        </section>
+                        <section className='sectionForm'>
+                        <Link to={PROFILE} className="back-href">VIEW PROFILE</Link>
                         </section>
                     </Form>
                 )}

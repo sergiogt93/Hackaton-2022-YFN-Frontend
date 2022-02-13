@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
 import { PROFILE } from "../../routes/routes";
 import CustomSelect from '../../components/CustomSelect';
@@ -34,10 +35,10 @@ export default function FormWork() {
                     touched,
                     errors,
                 }) => (
-                    <Form className='formSkill container'>
+                    <Form className='formWork container'>
                         <section className='sectionForm'>
                             <label htmlFor="experienceYear">Experencie years: (only numbers)</label>
-                            <Field type="number" id="experienceYear" name="experienceYear" placeholder="write your name"/>
+                            <Field type="number" id="experienceYear" name="experienceYear" placeholder="write your experience"/>
                             {touched.name && errors.name && <p className="error" role="alert">{errors.name}</p>}
                         </section>
                         <CustomSelect
@@ -46,9 +47,10 @@ export default function FormWork() {
                             selectedIndex = {values.selectedSector}
                         ></CustomSelect>
                         <section className='sectionForm'>
-                            <button type="submit">
-                                Guardar
-                            </button>
+                            <button type="submit">GUARDAR</button>
+                        </section>
+                        <section className='sectionForm'>
+                        <Link to={PROFILE} className="back-href">VIEW PROFILE</Link>
                         </section>
                     </Form>
                 )}

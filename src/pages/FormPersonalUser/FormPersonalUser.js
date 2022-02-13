@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
 import { PROFILE } from "../../routes/routes";
 import PersonalUserSchema from "./personalUserSchema";
@@ -46,9 +47,27 @@ function FormPersonalUser() {
                     {touched.email &&  errors.email && <p className=" error" role="alert">{errors.name}</p>}
                 </section>
                 <section className='sectionForm'>
+                    <label htmlFor="description">Description</label>
+                    <Field as="textarea" id="description" name="description" placeholder="write your description"/>
+                    {touched.description &&  errors.description && <p>{errors.description}</p>}
+                </section>
+                <section className='sectionForm'>
+                    <label htmlFor="city">City</label>
+                    <Field id="city" name="city" placeholder="write your city"/>
+                    {touched.city &&  errors.city && <p>{errors.city}</p>}
+                </section>
+                <section className='sectionForm'>
+                    <label htmlFor="country">Country</label>
+                    <Field id="country" name="country" placeholder="write your country"/>
+                    {touched.country &&  errors.country && <p>{errors.country}</p>}
+                </section>
+                <section className='sectionForm'>
                     <button type="submit">
                         Enviar
                     </button>
+                </section>
+                <section className='sectionForm'>
+                    <Link to={PROFILE} className="back-href">VIEW PROFILE</Link>
                 </section>
             </Form>
             )}
