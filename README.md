@@ -61,6 +61,6 @@ The other implements is:
 
 
 ✅ Validation if user empty input
-https://github.com/sergiogt93/Hackaton-2022-YFN-Frontend/blob/dev/raw/validation.png
+![Image text](https://github.com/sergiogt93/Hackaton-2022-YFN-Frontend/blob/dev/raw/validation.png)
 
 ✅ once you create a profile, you will be directly redirected to your profile, even if you open the browser later.
