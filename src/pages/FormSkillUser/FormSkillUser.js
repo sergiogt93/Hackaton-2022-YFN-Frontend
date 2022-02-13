@@ -18,10 +18,12 @@ export default function FormSkill() {
             <Formik
                 initialValues = {nameSkills}
                 onSubmit={(values) => {
-                    const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser"));
-                    const newSkill = allSkills.find(skill => skill.name === values.skill);
-                    oldSkillsUser.push(newSkill);
-                    localStorage.setItem("skillsUser", JSON.stringify(oldSkillsUser));
+                    if(values.skill.length > 0) {
+                        const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser"));
+                        const newSkill = allSkills.find(skill => skill.name === values.skill);
+                        oldSkillsUser.push(newSkill);
+                        localStorage.setItem("skillsUser", JSON.stringify(oldSkillsUser));
+                    }
                     navigate(PROFILE, {replace:true});
                 }}
             >

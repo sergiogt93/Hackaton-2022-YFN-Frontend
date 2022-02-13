@@ -25,8 +25,10 @@ export default function FormWork() {
             <Formik
                 initialValues = {initialValues}
                 onSubmit={(values) => {
-                    const workUser = {experienceYear: values.experienceYear, sector: values.sector};
-                    localStorage.setItem("workUser", JSON.stringify(workUser));
+                    if(!isNaN(values.experienceYear) && values.sector) {
+                        const workUser = {experienceYear: values.experienceYear, sector: values.sector};
+                        localStorage.setItem("workUser", JSON.stringify(workUser));
+                    }
                     navigate(PROFILE, {replace:true});
                 }}
             >
