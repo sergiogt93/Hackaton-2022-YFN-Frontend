@@ -11,7 +11,7 @@ function Skill({isForm = false}) {
             {skillsUser.map((skill) => (
             <figure>
                 <img src={"https://cdn.svgporn.com/logos/"+skill.files[0]} alt="skill"/>
-                {/* <figcaption><a href={skill.url}>{skill.name} </a></figcaption> */}
+                <figcaption><a href={skill.url}>{skill.name} </a></figcaption>
             </figure>))}
         </section>
     );
