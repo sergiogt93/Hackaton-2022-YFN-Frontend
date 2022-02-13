@@ -1,12 +1,12 @@
 .workInfo {
-    display: flex;
+    display: grid;
     gap: 20px;
 
     .container {
         position: relative;
         margin: 0;
         border: 1px solid transparent;
-        border-radius: 4%;
+        border-radius: 2%;
         padding: 1rem;
     }
 

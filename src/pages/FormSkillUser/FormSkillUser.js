@@ -14,7 +14,7 @@ export default function FormSkill() {
     const nameSkills = unassignedSkills(userSkills()).map(element => element.name);
 
     return (
-        <main>
+        <section className='mainFormSkill'>
             <Formik
                 initialValues = {nameSkills}
                 onSubmit={(values) => {
@@ -43,6 +43,6 @@ export default function FormSkill() {
                 )}
             </Formik>
             <Skills/>
-        </main>
+        </section>
     )
 }

@@ -1,5 +1,14 @@
-.formSkill {
+.mainFormSkill {
+    width: 90%;
+    height: 80vh;
+    margin: auto;
     margin-top: 10vh;
+    border: 1px solid transparent;
+    border-radius: 2%;
+}
+
+.selectSkills {
+    width: 50%;
 }
 
 .back-href {

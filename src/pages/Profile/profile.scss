@@ -1,6 +1,12 @@
 .profile {
-
     section {
         margin: 2rem;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .profile {
+        width: 60%;
+        margin: auto;
     }
 }
