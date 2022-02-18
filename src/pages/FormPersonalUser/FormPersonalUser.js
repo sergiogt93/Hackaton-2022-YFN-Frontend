@@ -5,20 +5,26 @@ import { PROFILE } from "../../routes/routes";
 import PersonalUserSchema from "./personalUserSchema";
 import './formPersonalUser.scss';
 
+const valuesDefault = {
+    name: '',
+    email: '',
+    description: '',
+    city: '',
+    country: ''
+}
+
 function FormPersonalUser() {
 
     let navigate = useNavigate();
 
     const userData = JSON.parse(localStorage.getItem("userData"));
 
-    const {name, email, description, city, country} = userData;
-
     const initialValues = {
-        name: name,
-        email: email,
-        description: description,
-        city: city,
-        country: country
+        name: (userData !== null) ? userData.name : valuesDefault.name,
+        email: (userData !== null) ? userData.email : valuesDefault.email,
+        description: (userData !== null) ? userData.description : valuesDefault.description,
+        city: (userData !== null) ? userData.city : valuesDefault.city,
+        country: (userData !== null) ? userData.country : valuesDefault.country
     }
 
     return (
@@ -67,7 +73,7 @@ function FormPersonalUser() {
                     </button>
                 </section>
                 <section className='sectionForm'>
-                    <Link to={PROFILE} className="back-href">VIEW PROFILE</Link>
+                    {userData !== null && (<Link to={PROFILE} className="back-href">VIEW PROFILE</Link>)}
                 </section>
             </Form>
             )}

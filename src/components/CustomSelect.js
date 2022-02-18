@@ -9,7 +9,7 @@ export default function CustomSelect({ name, options}) {
                     Select a {name}
                 </option>
                 {
-                    options.map(option => {
+                    options.length > 0 && options.map(option => {
                         return (
                             <option key={option} value={option}>
                                 {option}

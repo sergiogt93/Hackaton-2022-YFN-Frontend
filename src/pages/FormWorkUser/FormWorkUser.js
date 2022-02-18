@@ -5,6 +5,11 @@ import { PROFILE } from "../../routes/routes";
 import CustomSelect from '../../components/CustomSelect';
 import './formWorkUser.scss';
 
+const valuesDefault = {
+    experienceYear: '',
+    sector: '',
+}
+
 export default function FormWork() {
     let navigate = useNavigate();
 
@@ -12,13 +17,13 @@ export default function FormWork() {
 
     const workData = JSON.parse(localStorage.getItem("workUser"));
 
-    const {experienceYear, sector} = workData;
-
     const initialValues = {
-        experienceYear: experienceYear,
-        sectors: sectors,
-        selectedSector: sectors.findIndex(item => item === sector) + 1 || 0
-    };
+        experienceYear: (workData !== null) ? workData.experienceYear : valuesDefault.experienceYear,
+        sector: (workData !== null) ? workData.sector : valuesDefault.sector,
+        sectors: sectors
+    }
+
+    initialValues.selectedSector = sectors.findIndex(item => item === initialValues.sector) + 1 || 0
 
     return (
         <main>

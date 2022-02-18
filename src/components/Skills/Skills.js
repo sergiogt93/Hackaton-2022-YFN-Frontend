@@ -7,12 +7,15 @@ function Skill({isForm = false}) {
 
     return (
         <section className='container box-skills'>
+            <h2>Skills</h2>
             {isForm && <Link to={FORM_SKILLS_USER} className='edit-skill'><i className='bx bxs-edit'></i></Link>}
-            {skillsUser.map((skill) => (
-            <figure>
-                <img src={"https://cdn.svgporn.com/logos/"+skill.files[0]} alt="skill"/>
-                <figcaption><a href={skill.url}>{skill.name} </a></figcaption>
-            </figure>))}
+            <div className='skills'>
+                {skillsUser.map((skill) => (
+                <figure>
+                    <img src={"https://cdn.svgporn.com/logos/"+skill.files[0]} alt="skill"/>
+                    <figcaption><a href={skill.url}>{skill.name} </a></figcaption>
+                </figure>))}
+            </div>
         </section>
     );
 }

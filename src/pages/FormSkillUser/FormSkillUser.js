@@ -19,7 +19,7 @@ export default function FormSkill() {
                 initialValues = {nameSkills}
                 onSubmit={(values) => {
                     if(values.skill.length > 0) {
-                        const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser"));
+                        const oldSkillsUser = JSON.parse(localStorage.getItem("skillsUser")) || [];
                         const newSkill = allSkills.find(skill => skill.name === values.skill);
                         oldSkillsUser.push(newSkill);
                         localStorage.setItem("skillsUser", JSON.stringify(oldSkillsUser));

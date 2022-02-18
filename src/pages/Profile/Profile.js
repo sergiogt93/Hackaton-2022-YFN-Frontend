@@ -4,9 +4,8 @@ import Skills from '../../components/Skills/Skills';
 import './profile.scss';
 
 function Profile() {
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    const workUser = JSON.parse(localStorage.getItem("workUser"));
-    console.log('workUser',workUser);
+    const userData = JSON.parse(localStorage.getItem("userData")) || [];
+    const workUser = JSON.parse(localStorage.getItem("workUser")) || [];
 
     return (
         <main className="profile">
