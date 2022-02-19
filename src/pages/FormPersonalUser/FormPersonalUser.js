@@ -1,10 +1,21 @@
+//Import libraries react
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
+
+//Import routes
 import { PROFILE } from "../../routes/routes";
+
+//Import helpers
+import { showVerificationSuccess } from "../../helpers/showVerification";
+
+//Import schema verification form
 import PersonalUserSchema from "./personalUserSchema";
+
+//Import styles of component
 import './formPersonalUser.scss';
 
+//initial values that the form will have by default
 const valuesDefault = {
     name: '',
     email: '',
@@ -27,6 +38,8 @@ function FormPersonalUser() {
         country: (userData !== null) ? userData.country : valuesDefault.country
     }
 
+
+
     return (
         <Formik
             initialValues = {initialValues}
@@ -34,6 +47,7 @@ function FormPersonalUser() {
             onSubmit={(values, {resetForm}) => {
                 localStorage.setItem("userData", JSON.stringify(values));
                 resetForm();
+                showVerificationSuccess(userData);
                 navigate(PROFILE, {replace:true});
             }}
         >

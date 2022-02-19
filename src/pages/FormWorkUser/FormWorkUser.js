@@ -1,8 +1,18 @@
+//Import libraries react
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
+
+//Import routes
 import { PROFILE } from "../../routes/routes";
+
+//Import other components
 import CustomSelect from '../../components/CustomSelect';
+
+//Import helpers
+import { showVerificationSuccess } from "../../helpers/showVerification";
+
+//Import styles of component
 import './formWorkUser.scss';
 
 const valuesDefault = {
@@ -33,6 +43,7 @@ export default function FormWork() {
                     if(!isNaN(values.experienceYear) && values.sector) {
                         const workUser = {experienceYear: values.experienceYear, sector: values.sector};
                         localStorage.setItem("workUser", JSON.stringify(workUser));
+                        showVerificationSuccess(workData);
                     }
                     navigate(PROFILE, {replace:true});
                 }}

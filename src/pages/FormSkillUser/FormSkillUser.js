@@ -1,13 +1,21 @@
+//Import libraries react
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Formik, Form } from "formik";
 import { PROFILE } from "../../routes/routes";
+
+//Import other components
 import CustomSelect from '../../components/CustomSelect';
-import allSkills from "../../resources/skills.json";
-import userSkills from "../../utils/useSkillUser";
 import Skills from "../../components/Skills";
+
+//Import data
+import allSkills from "../../resources/skills.json";
+
+//Import helpers
+import { userSkills, unassignedSkills } from "../../helpers/helpersSkills";
+
+//Import styles of component
 import './formSkillUser.scss';
-import unassignedSkills from '../../utils/useUnassignedSkills';
 
 export default function FormSkill() {
     const navigate = useNavigate();

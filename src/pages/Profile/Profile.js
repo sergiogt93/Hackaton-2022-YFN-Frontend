@@ -1,6 +1,9 @@
+//Import other components
 import PersonalInforUser from '../../components/User/PersonalInforUser';
 import WorkInforUser from '../../components/User/WorkInforUser';
 import Skills from '../../components/Skills/Skills';
+
+//Import styles of component
 import './profile.scss';
 
 function Profile() {
