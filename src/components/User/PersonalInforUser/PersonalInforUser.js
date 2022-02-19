@@ -17,7 +17,7 @@ function PersonalInforUser({ name, email, city, country, description}) {
                 <p>{email !== null && email}</p>
                 <p>{city !== null && city + ","} {country !== null && country}</p>
             </article>
-            <article>
+            <article className='description'>
                 <h2>Description</h2>
                 <p>{description !== null && description}</p>
             </article>
