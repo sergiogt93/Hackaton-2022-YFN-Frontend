@@ -11,7 +11,7 @@ function Skill({isForm = false}) {
             {isForm && <Link to={FORM_SKILLS_USER} className='edit-skill'><i className='bx bxs-edit'></i></Link>}
             <div className='skills'>
                 {skillsUser.map((skill) => (
-                <figure>
+                <figure key={skill.name}>
                     <img src={"https://cdn.svgporn.com/logos/"+skill.files[0]} alt="skill"/>
                     <figcaption><a href={skill.url}>{skill.name} </a></figcaption>
                 </figure>))}

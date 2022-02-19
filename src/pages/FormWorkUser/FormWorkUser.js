@@ -36,7 +36,7 @@ export default function FormWork() {
     initialValues.selectedSector = sectors.findIndex(item => item === initialValues.sector) + 1 || 0
 
     return (
-        <main>
+        <main className='mainWorkForm'>
             <Formik
                 initialValues = {initialValues}
                 onSubmit={(values) => {
@@ -54,7 +54,7 @@ export default function FormWork() {
                     errors,
                 }) => (
                     <Form className='formWork container'>
-                        <section className='sectionForm'>
+                        <section className='sectionForm sectionExperencieYears'>
                             <label htmlFor="experienceYear">Experencie years: (only numbers)</label>
                             <Field type="number" id="experienceYear" name="experienceYear" placeholder="write your experience"/>
                             {touched.name && errors.name && <p className="error" role="alert">{errors.name}</p>}
